@@ -1,0 +1,32 @@
+body {
+  position: relative;
+  margin: 0;
+  background: #E95F9B;
+  font-family: ImperatorSmallCaps;
+  text-decoration: none;
+  z-index: -1;
+}
+
+body ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body img {
+  width: 100%;
+}
+
+body .navbar, body .mobile {
+  background: #D42D76;
+}
+
+body .navbar a, body .mobile a {
+  color: white;
+}
+/*# sourceMappingURL=main-org.css.map */
