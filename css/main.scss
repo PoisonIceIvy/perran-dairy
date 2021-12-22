@@ -26,12 +26,18 @@ $colors: (
     flex-direction: column;
     text-align: left;
     transition: 0.3s;
+    z-index: 2;
   }
   .nav-item {
     margin: 16px 0;
   }
   .nav-menu.active {
+    position: fixed;
     right: 0;
+  }
+  .social {
+    display: inline;
+    float: left;
   }
 }
 @function color($color-name) {
@@ -90,6 +96,7 @@ body {
     background: color(accent);
     display: flex;
     justify-content: space-between;
+    padding: 1em;
     align-items: center;
     gap: 60px;
   }

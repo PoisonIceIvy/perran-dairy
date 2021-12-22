@@ -25,12 +25,18 @@
     text-align: left;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    z-index: 2;
   }
   .nav-item {
     margin: 16px 0;
   }
   .nav-menu.active {
+    position: fixed;
     right: 0;
+  }
+  .social {
+    display: inline;
+    float: left;
   }
 }
 
@@ -91,6 +97,7 @@ body img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
