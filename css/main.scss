@@ -1,222 +1,175 @@
 $colors: (
-   prime:  #E95F9B,
-   accent: #D42D76,
-   text: white,
-   text2: black,
-   hover: #a01652,
-   
+  prime: #e95f9b,
+  accent: #d42d76,
+  text: white,
+  text2: black,
+  hover: #a01652,
 );
-
-@function color($color-name){
-    @return map-get($colors, $color-name)
+@media (max-width: 470px) {
+  .hamburger {
+    display: none;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 85px;
+    gap: 0;
+    flex-direction: column;
+    text-align: left;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    right: 0;
+  }
+}
+@function color($color-name) {
+  @return map-get($colors, $color-name);
 }
 
-@mixin center ($width: null, $height: null) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @if not $width and not $height {
-        transform: translate(-50%, -50%);
-        
-    }
- 
+@mixin center($width: null, $height: null) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @if not $width and not $height {
+    transform: translate(-50%, -50%);
+  }
 }
-
 
 body {
-   
- 
-    min-height: 100%;
-    margin: 0;
-    background: color(prime);
-    font-family:ImperatorSmallCaps;
-    text-decoration: none;
-    position: relative;
-    a:hover {
-        background-color: color(hover)
-    }
-    a:hover{
-        border-radius: 3px;
-    }
-    
-    .large-logo {
-        display: none;
-    }
-      
-ul {
+  min-height: 100%;
+  margin: 0;
+  background: color(prime);
+  font-family: ImperatorSmallCaps;
+  text-decoration: none;
+  position: relative;
+
+  .large-logo {
+    display: none;
+  }
+
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-   
-   }
-
-a{
-    text-decoration: none;
-    color: color(text);
-    
-}
-img{
-    width: 100%;
-}
-
-    
-}
-.main-menu{
-    background: color(accent);
-    margin: 0;
-    display: flex;
-    color: color(text2);
-    .social{
-        display: none;
-    }
-    .navbar {
-        background: #bd9aa9;
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        padding: 0 20px 0 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        .navbar.active{
-            transform: translateX(0);
-        }
-        li{
-            text-align: left;
-            margin: 14px 0;
-        }
-        .ham {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px 15px;
-            transform: translateX(-100%);
-            .ham-mob{
-                width: 100%;
-                display: block;
-            }
-            .exit{
-                display: none;
-            }
-        }
-       
-          
-
-        
-
-        a{
-            color: color(text2);
-        }
-        
-    }
-    
-
-}
-
-  
-    .nav-mob{
-         display: flex;
-         justify-content: space-between;
-         width: 100%;
-         .ham-mob {
-             margin: 1em 1em;
-             padding: 1em 1em;
-         }
-         
-       
-  
-      
-       
-       
-}
-.front {
-    
-    color: color(text);
-    text-align: center;
-    padding: 0 2em;
-    margin-top: 0;
- 
-    
- 
-    .content{
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        position: relative;
-       
-       
-   
-    
-
-      p, h1, .square{
-        margin: 1em 1em;
-        letter-spacing: 0.1em;  
-    }
-
-   .banana {
-       display: inline;
-       margin: 0 auto;
-       margin-left: -25%;
-       width: auto;
-       height: 200px;
-      
-    }
-    
-      .square { 
-       border-radius: 50%;
-       width: 200px;
-       height:200px;
-       overflow: hidden;
-       display: block;
-       margin: 0 auto 1em auto;
-
-      
-     
-       
-       
   }
 
-}
-   
-}
-    
-.footer {
-    
-    background: color(accent);
+  a {
+    text-decoration: none;
     color: color(text);
-    padding: 0;
-    margin-bottom: 0;
-    position: bottom;
-    
-    
-    
-   
-    
-    .style{
-        
-        display: table;
-        margin: 0 auto;
-        
+  }
+  img {
+    width: 100%;
+  }
+}
+.main-menu {
+  background: color(accent);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  color: color(text2);
+  min-height: 70px;
+  align-items: center;
+  padding: 0 24px;
+
+  .social {
+    display: none;
+  }
+  .nav-menu {
+    background: color(accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+  .nav-link {
+    transition: 0.5s ease;
+  }
+  .nav-link:hover {
+    color: color(hover);
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+    }
+  }
+}
+.front {
+  color: color(text);
+  text-align: center;
+  padding: 0 2em;
+  margin-top: 0;
+
+  .content {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+
+    p,
+    h1,
+    .square {
+      margin: 1em 1em;
+      letter-spacing: 0.1em;
     }
 
-    li, a{
-        display: inline;
-        float: left;
-      
-    }
-    .note{
-        display: none;
-    }
+    .banana {
+      display: inline;
+      margin: 0 auto;
+      margin-left: -25%;
+      width: auto;
+      height: 200px;
     }
 
-       
-   
-     
+    .square {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      display: block;
+      margin: 0 auto 1em auto;
+    }
+  }
+}
 
-   
-        
-    
+.footer {
+  background: color(accent);
+  color: color(text);
+  padding: 0;
+  margin-bottom: 0;
+  position: bottom;
 
+  .style {
+    display: table;
+    margin: 0 auto;
+  }
 
+  li,
+  a {
+    display: inline;
+    float: left;
+  }
+  .note {
+    display: none;
+  }
+}
