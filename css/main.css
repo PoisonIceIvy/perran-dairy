@@ -1,7 +1,4 @@
-@media (max-width: 470px) {
-  .hamburger {
-    display: none;
-  }
+@media only screen and (max-width: 470px) {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -37,6 +34,15 @@
   .social {
     display: inline;
     float: left;
+  }
+}
+
+@media only screen and (max-width: 470px) and (min-width: 470px) {
+  .hamburger {
+    display: none;
+  }
+  .social {
+    display: block;
   }
 }
 
@@ -194,5 +200,67 @@ body img {
 
 .footer .note {
   display: none;
+}
+
+.featured {
+  margin: 1em;
+  color: white;
+  text-align: center;
+}
+
+.featured .history {
+  letter-spacing: 00.1em;
+  font-weight: bold;
+}
+
+.featured .para {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.featured .para p {
+  letter-spacing: 0.1em;
+  margin: 0 1em;
+}
+
+.featured .history-img-left {
+  display: inline;
+  margin: 0 auto;
+  margin-left: -25%;
+  width: auto;
+  height: 200px;
+}
+
+.featured .square2 {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto 1em auto;
+}
+
+.about-left {
+  display: inline;
+  margin: 0 auto;
+  margin-left: -25%;
+  width: auto;
+  height: 200px;
+}
+
+.about-us-left {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto 1em auto;
+}
+
+.about-us {
+  margin: 1em;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.1em;
 }
 /*# sourceMappingURL=main.css.map */
