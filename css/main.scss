@@ -1,20 +1,53 @@
-$colors: (
-  prime: #e95f9b,
+$colors: (prime: #e95f9b,
   accent: #d42d76,
   text: white,
   text2: black,
   hover: #a01652,
 );
-@media only screen and (max-width: 470px) {
+
+@font-face {
+  font-family: 'Imperator';
+  src: url('../fonts/Imperator.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ImperatorSmallCaps';
+  src: url('../fonts/ImperatorSmallCaps.woff') format('woff');
+}
+
+html {
+  height: 100%;
+  font-family: 'Imperator';
+}
+
+.hamburger {
+  display: none;
+}
+
+.social {
+  display: block;
+}
+
+/* Show Hamburger Menu when the width is less than 470px */
+
+@media (max-width: 470px) {
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
+
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
+
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  .hamburger {
+    display: block;
+  }
+
   .nav-menu {
     position: fixed;
     right: -100%;
@@ -25,26 +58,24 @@ $colors: (
     transition: 0.3s;
     z-index: 2;
   }
+
   .nav-item {
     margin: 16px 0;
   }
+
   .nav-menu.active {
     position: fixed;
     right: 0;
   }
+
   .social {
     display: inline;
     float: left;
   }
-  @media (min-width: 470px) {
-    .hamburger {
-      display: none;
-    }
-    .social {
-      display: block;
-    }
-  }
+
 }
+
+
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }
@@ -53,6 +84,7 @@ $colors: (
   position: absolute;
   top: 50%;
   left: 50%;
+
   @if not $width and not $height {
     transform: translate(-50%, -50%);
   }
@@ -80,10 +112,12 @@ body {
     text-decoration: none;
     color: color(text);
   }
+
   img {
     width: 100%;
   }
 }
+
 .main-menu {
   background: color(accent);
   margin: 0;
@@ -97,6 +131,7 @@ body {
   .social {
     display: none;
   }
+
   .nav-menu {
     background: color(accent);
     display: flex;
@@ -105,14 +140,16 @@ body {
     align-items: center;
     gap: 60px;
   }
+
   .nav-link {
     transition: 0.5s ease;
   }
+
   .nav-link:hover {
     color: color(hover);
   }
+
   .hamburger {
-    display: block;
     cursor: pointer;
 
     .bar {
@@ -126,6 +163,7 @@ body {
     }
   }
 }
+
 .front {
   color: color(text);
   text-align: center;
@@ -169,7 +207,9 @@ body {
   color: color(text);
   padding: 0;
   margin-bottom: 0;
-  position: bottom;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 
   .style {
     display: table;
@@ -181,25 +221,31 @@ body {
     display: inline;
     float: left;
   }
+
   .note {
     display: none;
   }
 }
+
 .featured {
   margin: 1em;
   color: color(text);
   text-align: center;
+
   .history {
     letter-spacing: 00.1em;
     font-weight: bold;
   }
+
   .para {
     column-count: 2;
+
     p {
       letter-spacing: 0.1em;
       margin: 0 1em;
     }
   }
+
   .history-img-left {
     display: inline;
     margin: 0 auto;
@@ -207,6 +253,7 @@ body {
     width: auto;
     height: 200px;
   }
+
   .square2 {
     border-radius: 50%;
     width: 200px;
@@ -216,6 +263,7 @@ body {
     margin: 0 auto 1em auto;
   }
 }
+
 .about-left {
   display: inline;
   margin: 0 auto;
@@ -223,6 +271,7 @@ body {
   width: auto;
   height: 200px;
 }
+
 .about-us-left {
   border-radius: 50%;
   width: 200px;
@@ -231,9 +280,44 @@ body {
   display: block;
   margin: 0 auto 1em auto;
 }
+
 .about-us {
   margin: 1em;
   color: color(text);
   text-align: center;
   letter-spacing: 0.1em;
+}
+
+/* nick's code */
+
+.main-container {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.food {
+  display: flex;
+  color: color(text);
+
+  .waffle {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    width: auto;
+    height: 200px;
+  }
+
+  .food-right {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto 1em auto;
+  }
 }
