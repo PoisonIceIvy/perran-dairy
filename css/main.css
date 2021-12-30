@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'Imperator';
+  font-family: "Imperator";
   src: url("../fonts/Imperator.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'ImperatorSmallCaps';
+  font-family: "ImperatorSmallCaps";
   src: url("../fonts/ImperatorSmallCaps.woff") format("woff");
 }
 
 html {
   height: 100%;
-  font-family: 'Imperator';
+  font-family: "Imperator";
 }
 
 .hamburger {
@@ -294,14 +294,29 @@ body img {
   right: 0;
 }
 
-.food {
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.food .waffle {
+section .food-left {
+  position: relative;
+  text-align: center;
+  margin: 1em 2em;
+  letter-spacing: 0.1em;
+}
+
+section .button-open {
+  margin: 1em auto;
+}
+
+section .waffle {
   display: inline;
   margin: 0 auto;
   margin-left: -25%;
@@ -309,7 +324,7 @@ body img {
   height: 200px;
 }
 
-.food .food-right {
+section .food-right {
   border-radius: 50%;
   width: 200px;
   height: 200px;

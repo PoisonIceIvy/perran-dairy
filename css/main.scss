@@ -1,4 +1,5 @@
-$colors: (prime: #e95f9b,
+$colors: (
+  prime: #e95f9b,
   accent: #d42d76,
   text: white,
   text2: black,
@@ -6,18 +7,18 @@ $colors: (prime: #e95f9b,
 );
 
 @font-face {
-  font-family: 'Imperator';
-  src: url('../fonts/Imperator.woff') format('woff');
+  font-family: "Imperator";
+  src: url("../fonts/Imperator.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'ImperatorSmallCaps';
-  src: url('../fonts/ImperatorSmallCaps.woff') format('woff');
+  font-family: "ImperatorSmallCaps";
+  src: url("../fonts/ImperatorSmallCaps.woff") format("woff");
 }
 
 html {
   height: 100%;
-  font-family: 'Imperator';
+  font-family: "Imperator";
 }
 
 .hamburger {
@@ -31,7 +32,6 @@ html {
 /* Show Hamburger Menu when the width is less than 470px */
 
 @media (max-width: 470px) {
-
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -72,9 +72,7 @@ html {
     display: inline;
     float: left;
   }
-
 }
-
 
 @function color($color-name) {
   @return map-get($colors, $color-name);
@@ -300,9 +298,19 @@ body {
   right: 0;
 }
 
-.food {
+section {
   display: flex;
   color: color(text);
+  flex-direction: column;
+  .food-left {
+    position: relative;
+    text-align: center;
+    margin: 1em 2em;
+    letter-spacing: 0.1em;
+  }
+  .button-open {
+    margin: 1em auto;
+  }
 
   .waffle {
     display: inline;
