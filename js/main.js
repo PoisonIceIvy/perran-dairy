@@ -11,8 +11,8 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click',(
     navMenu.classList.remove('active');
 }))
 
-var buttonOpen = document.querySelector('.button-open');
-var menu = document.querySelector('.menu');
+const buttonOpen = document.querySelector('.button-open');
+const menu = document.querySelector('.menu');
 buttonOpen.addEventListener('click', () => {
     buttonOpen.classList.toggle('active');
     menu.classList.toggle('active');
